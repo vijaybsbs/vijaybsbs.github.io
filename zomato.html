@@ -108,6 +108,21 @@
 
     <section class="case-section container">
       <div class="case-section-head">
+        <div class="eyebrow">CONTEXT VALIDATION</div>
+        <h2>The correlation changed when the market context changed.</h2>
+        <p>The same restaurant attributes show a very different relationship when the dataset is filtered to India. The comparison below makes the analytical context visible before interpreting the pricing relationship.</p>
+      </div>
+      <div class="case-image-grid">
+        <figure style="grid-column:1 / -1">
+          <img src="assets/projects/zomato-correlation-comparison.webp" alt="Correlation heatmap comparison for all countries versus India-only filtered data">
+          <figcaption>Correlation matrix comparison — all countries versus India only. The Average Cost for Two ↔ Price Range correlation rises from 0.08 in the unfiltered dataset to 0.84 after filtering to India.</figcaption>
+        </figure>
+      </div>
+      <div class="case-callout"><strong>Interpretation</strong><div>Because the dataset contains multiple countries and currencies, the unfiltered relationship is not directly comparable with an India-only relationship. The analysis therefore checks context before drawing conclusions. Correlation indicates association, not causation.</div></div>
+    </section>
+
+    <section class="case-section container">
+      <div class="case-section-head">
         <div class="eyebrow">ANALYSIS</div>
         <h2>From SQL questions to a broader analytical framework.</h2>
         <p>The original SQL case study covers Q1–Q8. The continuation extends the work from Q9 onward using Python, Pandas and SQLite.</p>
