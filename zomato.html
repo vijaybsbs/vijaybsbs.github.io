@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zomato Restaurant Business Analysis — SQL, Python EDA, restaurant performance, pricing, delivery adoption and city-level market analysis by Vijay Kumar.">
+  <meta name="author" content="Vijay Kumar">
+  <title>Zomato Restaurant Business Analysis | Vijay Kumar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="case-study-page">
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="index.html">VK<span>.</span></a>
+      <div class="nav-links">
+        <a href="index.html#work">Projects</a>
+        <a href="index.html#dashboards">Dashboards</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-hero container">
+      <div>
+        <div class="eyebrow">CASE STUDY · SQL + PYTHON</div>
+        <h1>Zomato Restaurant<br><span>Business Analysis.</span></h1>
+        <p class="case-lead">An end-to-end analysis of restaurant pricing, ratings, customer engagement, online-delivery adoption, cuisine popularity and city-level market structure.</p>
+        <div class="case-tags">
+          <span>SQL</span><span>Python</span><span>Pandas</span><span>SQLite</span><span>EDA</span><span>Business Analytics</span>
+        </div>
+        <div class="case-actions">
+          <a class="btn primary" href="https://github.com/vijaybsbs/Zomato-Restaurant-Business-Analysis" target="_blank" rel="noopener">View GitHub ↗</a>
+          <a class="btn secondary" href="https://colab.research.google.com/drive/188SNmUxsUd7XcYs_fepqCU9sghCcTDLN?usp=sharing" target="_blank" rel="noopener">Open Colab ↗</a>
+        </div>
+      </div>
+      <div class="case-hero-visual">
+        <img src="assets/projects/zomato-cover.svg" alt="Zomato restaurant business analysis visual">
+      </div>
+    </section>
+
+    <section class="case-section case-muted">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">BUSINESS PROBLEM</div>
+          <h2>What does the restaurant data actually tell us?</h2>
+          <p>The project started with SQL business questions and expanded into Python EDA and advanced analysis to understand restaurant performance, pricing, customer engagement and digital-delivery adoption.</p>
+        </div>
+        <div class="case-question-grid">
+          <div class="case-question">Which restaurants are the most expensive?</div>
+          <div class="case-question">Which restaurants combine strong ratings with affordability?</div>
+          <div class="case-question">Where is online-delivery adoption higher or lower?</div>
+          <div class="case-question">Which cuisines and cities receive the most recorded engagement?</div>
+          <div class="case-question">How do ratings, votes and pricing vary across price ranges?</div>
+          <div class="case-question">Which cities have different supply, quality and delivery profiles?</div>
+          <div class="case-question">Which restaurants provide delivery without table booking?</div>
+          <div class="case-question">Can city-level metrics support an opportunity framework?</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section container">
+      <div class="case-section-head">
+        <div class="eyebrow">DATA & CONTEXT</div>
+        <h2>9,551 restaurants. 15 countries. 141 cities.</h2>
+        <p>The dataset contains 18 columns covering restaurant identity, location, cuisine, pricing, ratings, votes, table booking and online-delivery availability.</p>
+      </div>
+      <div class="case-kpi-grid">
+        <div class="case-kpi"><strong>9,551</strong><span>Restaurant records</span></div>
+        <div class="case-kpi"><strong>18</strong><span>Columns</span></div>
+        <div class="case-kpi"><strong>15</strong><span>Countries</span></div>
+        <div class="case-kpi"><strong>141</strong><span>Cities</span></div>
+      </div>
+      <div class="case-table-wrap">
+        <table>
+          <thead><tr><th>Field</th><th>Business meaning</th><th>Used for</th></tr></thead>
+          <tbody>
+            <tr><td>RestaurantName</td><td>Restaurant identity</td><td>Restaurant-level analysis</td></tr>
+            <tr><td>CountryName / City</td><td>Geographic market</td><td>Country and city comparisons</td></tr>
+            <tr><td>Cuisines</td><td>Cuisine combination</td><td>Cuisine engagement analysis</td></tr>
+            <tr><td>Price_range / Average_Cost_for_two</td><td>Pricing</td><td>Price and value analysis</td></tr>
+            <tr><td>Rating / Votes</td><td>Recorded customer response</td><td>Quality and engagement analysis</td></tr>
+            <tr><td>Has_Online_delivery</td><td>Digital delivery availability</td><td>Delivery adoption analysis</td></tr>
+            <tr><td>Has_Table_booking</td><td>Table booking availability</td><td>Service-model analysis</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="case-callout"><strong>Context</strong><div>India represents approximately 90.59% of the records, so dataset-wide conclusions are strongly influenced by the Indian restaurant market. The analysis therefore uses explicit context when comparing cities, countries and pricing.</div></div>
+    </section>
+
+    <section class="case-section case-muted">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">DATA QUALITY FIRST</div>
+          <h2>Validate before interpreting.</h2>
+          <p>The analysis checks missing values, zero-engagement records and duplicate Restaurant IDs before moving into business KPIs. This separates data-quality issues from genuine restaurant performance patterns.</p>
+        </div>
+        <div class="case-stat-list">
+          <div><strong>1,094</strong><span>Restaurants with zero votes</span></div>
+          <div><strong>2,148</strong><span>Rating ≤ 1.0 and votes ≤ 3</span></div>
+          <div><strong>90.59%</strong><span>Records from India</span></div>
+        </div>
+        <p class="case-note">Votes are treated as a recorded engagement measure, not as unique customers or orders. Low-vote restaurants should therefore be interpreted differently from highly reviewed restaurants.</p>
+      </div>
+    </section>
+
+    <section class="case-section container">
+      <div class="case-section-head">
+        <div class="eyebrow">ANALYSIS</div>
+        <h2>From SQL questions to a broader analytical framework.</h2>
+        <p>The original SQL case study covers Q1–Q8. The continuation extends the work from Q9 onward using Python, Pandas and SQLite.</p>
+      </div>
+      <div class="case-two-col">
+        <div class="case-panel"><strong>Q1–Q8</strong><span>SQL Business Case Study</span><small>Pricing · data quality · Indian restaurants without delivery · value-for-money · city delivery adoption · delivery without table booking · cuisine popularity · city dining cost</small></div>
+        <div class="case-panel"><strong>Q9–Q28</strong><span>Python EDA & Advanced Analysis</span><small>Dataset profiling · distributions · delivery · engagement · cuisine · correlation · segmentation · value-for-money · city market profile · opportunity framework</small></div>
+      </div>
+      <div class="case-flow">
+        <span>Data Understanding</span><i>→</i><span>Validation</span><i>→</i><span>SQL</span><i>→</i><span>Python EDA</span><i>→</i><span>Advanced Analysis</span><i>→</i><span>Business Insights</span>
+      </div>
+    </section>
+
+    <section class="case-section case-muted">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">KEY FINDINGS</div>
+          <h2>What emerged from the analysis?</h2>
+        </div>
+        <div class="case-final-grid">
+          <div><h3>Engagement is skewed</h3><p>Mean votes are approximately 157, compared with a median of 31 and a maximum of 10,934.</p></div>
+          <div><h3>Delivery gap</h3><p>3,022 Indian restaurants serving Indian cuisine do not offer online delivery in the dataset.</p></div>
+          <div><h3>Price & engagement</h3><p>Price Range 1 averages 2.33 rating / 36 votes, while Price Range 4 averages 3.66 rating / 404 votes.</p></div>
+          <div><h3>City + cuisine</h3><p>New Delhi — North Indian | Mughlai records the highest city–cuisine vote total at 27,951.</p></div>
+          <div><h3>Value-for-money</h3><p>A project-defined rule combines rating ≥ 4.5, votes &gt; 500 and average cost for two &lt; ₹800.</p></div>
+          <div><h3>Market structure</h3><p>City profiles combine supply, ratings, votes, pricing and delivery adoption to provide broader market context.</p></div>
+        </div>
+        <div class="case-insight">
+          <span>ANALYTICAL PRINCIPLE</span>
+          <strong>Business conclusions depend on data context, not just the final SQL query or chart.</strong>
+          <p>Comparability, representativeness, engagement definitions and analytical thresholds are documented throughout the project.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section container">
+      <div class="case-section-head">
+        <div class="eyebrow">ADVANCED ANALYSIS</div>
+        <h2>Turning restaurant records into business segments.</h2>
+        <p>The advanced notebook adds correlation analysis, performance segmentation, value-for-money analysis and city-level market profiling.</p>
+      </div>
+      <div class="case-two-col">
+        <div class="case-panel"><strong>4</strong><span>Project-defined restaurant segments</span><small>High Value Performer · Strong Performer · Average Performer · Needs Attention. These are analytical rules created for this project, not official Zomato classifications.</small></div>
+        <div class="case-panel"><strong>4</strong><span>Market Opportunity components</span><small>Delivery Gap 30% · Customer Demand 30% · Restaurant Density 20% · Average Rating / Quality 20%.</small></div>
+      </div>
+      <div class="case-callout"><strong>Important</strong><div>The Market Opportunity Score is a portfolio analytical framework created specifically for this project. It is not an official Zomato metric or a validated commercial market-ranking model.</div></div>
+    </section>
+
+    <section class="case-section case-muted">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">BUSINESS IMPLICATIONS</div>
+          <h2>What could the analysis support?</h2>
+        </div>
+        <div class="case-final-grid">
+          <div><h3>Delivery expansion</h3><p>Investigate cities with meaningful restaurant supply and engagement alongside lower delivery adoption.</p></div>
+          <div><h3>Value discovery</h3><p>Identify restaurants combining strong ratings, recorded engagement and relatively affordable pricing.</p></div>
+          <div><h3>Cuisine discovery</h3><p>Use city-level cuisine engagement to support localized restaurant discovery.</p></div>
+          <div><h3>Market differentiation</h3><p>Compare premium-oriented and value-oriented city profiles using multiple supporting metrics.</p></div>
+          <div><h3>Engagement strategy</h3><p>Separate low-recorded-engagement restaurants from highly reviewed restaurants when evaluating performance.</p></div>
+          <div><h3>Data governance</h3><p>Retain validation checks before using restaurant data for operational KPIs or decisions.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section container">
+      <div class="case-section-head">
+        <div class="eyebrow">TECH STACK</div>
+        <h2>SQL inside Python, not SQL in isolation.</h2>
+        <p>The project combines relational querying with Python-based EDA so the analysis can move from business questions to validation, statistical exploration and decision-oriented interpretation.</p>
+      </div>
+      <div class="case-tags">
+        <span>Python</span><span>Pandas</span><span>SQLite</span><span>SQL</span><span>Matplotlib</span><span>Jupyter</span><span>Google Colab</span><span>GitHub</span>
+      </div>
+      <div class="case-callout"><strong>Advanced SQL</strong><div>City + cuisine aggregation, ranking and a <code>ROW_NUMBER()</code> window-function approach are used to identify the most-voted cuisine in each city.</div></div>
+    </section>
+
+    <section class="case-section case-muted">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">LIMITATIONS</div>
+          <h2>What the dataset cannot establish.</h2>
+        </div>
+        <div class="case-final-grid">
+          <div><h3>Snapshot data</h3><p>The dataset does not provide historical restaurant performance trends.</p></div>
+          <div><h3>Currency context</h3><p>Multiple countries and currencies make direct global cost comparisons misleading without normalization.</p></div>
+          <div><h3>Votes ≠ customers</h3><p>Recorded votes should not automatically be interpreted as unique customers or orders.</p></div>
+          <div><h3>Association ≠ causation</h3><p>Correlation analysis identifies association and does not establish causal relationships.</p></div>
+          <div><h3>Project thresholds</h3><p>Restaurant segments and the opportunity score use project-defined analytical rules.</p></div>
+          <div><h3>Decision validation</h3><p>Recommendations require current operational, financial and historical data before implementation.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact">
+        <div><div class="eyebrow">PROJECT RESOURCES</div><h2>Explore the analysis<br><span>in full.</span></h2></div>
+        <div class="contact-actions">
+          <a class="btn primary" href="https://github.com/vijaybsbs/Zomato-Restaurant-Business-Analysis" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn secondary" href="https://colab.research.google.com/drive/188SNmUxsUd7XcYs_fepqCU9sghCcTDLN?usp=sharing" target="_blank" rel="noopener">Google Colab ↗</a>
+          <a class="btn secondary" href="index.html#work">All projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container"><span>© <span id="year"></span> Vijay Kumar</span><span>Business Analytics · Data Analytics · BI</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
