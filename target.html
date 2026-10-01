@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Target Brazil E-commerce Analytics | Vijay Kumar</title>
+  <meta name="description" content="Target Brazil E-commerce Analytics case study by Vijay Kumar — GoogleSQL, BigQuery, customer analytics and Looker Studio.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="case-study-page">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">VK<span>.</span></a>
+      <nav class="nav-links">
+        <a href="index.html#work">Projects</a>
+        <a href="index.html#dashboards">Dashboards</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero container">
+      <div class="case-hero-copy">
+        <div class="eyebrow">01 / E-COMMERCE · CASE STUDY</div>
+        <h1>Target Brazil<br><span>E-commerce Analytics</span></h1>
+        <p class="case-lead">An end-to-end customer, order and operational analytics case study using Google BigQuery, GoogleSQL and Looker Studio.</p>
+        <div class="case-tags">
+          <span>SQL</span><span>BigQuery</span><span>Looker Studio</span><span>Customer Analytics</span>
+        </div>
+        <div class="case-actions">
+          <a class="btn primary" href="https://datastudio.google.com/reporting/c415700a-a100-4e78-84bf-445e071a173b" target="_blank" rel="noopener">Live dashboard ↗</a>
+          <a class="btn secondary" href="https://github.com/vijaybsbs/Target-Brazil-Ecommerce-Analytics" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="text-link" href="index.html#work">← Back to projects</a>
+        </div>
+      </div>
+      <div class="case-hero-visual">
+        <img src="assets/projects/target-cover.svg" alt="Target Brazil E-commerce Analytics overview">
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">THE BUSINESS QUESTION</div>
+          <h2>What is happening across customers, orders and operations?</h2>
+        </div>
+        <div class="case-question-grid">
+          <div class="case-question">Is the underlying data complete and structurally reliable?</div>
+          <div class="case-question">How does demand evolve across time and geography?</div>
+          <div class="case-question">Who are the highest-value customer groups?</div>
+          <div class="case-question">How do delivery, payment and review behaviour relate?</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-muted">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">DATA MODEL & GRAIN CONTROL</div>
+          <h2>Understand the data before writing the query.</h2>
+          <p>The analysis starts from the relational model and controls analytical grain before customer- or order-level metrics are calculated.</p>
+        </div>
+        <div class="case-table-wrap">
+          <table>
+            <thead><tr><th>Table</th><th>Rows</th><th>Role</th></tr></thead>
+            <tbody>
+              <tr><td>customers</td><td>99,441</td><td>Customer master and geography</td></tr>
+              <tr><td>orders</td><td>99,441</td><td>Core order-level transaction grain</td></tr>
+              <tr><td>order_items</td><td>112,650</td><td>Products and seller-level order lines</td></tr>
+              <tr><td>payments</td><td>103,886</td><td>Payment method, value and installments</td></tr>
+              <tr><td>order_reviews</td><td>99,224</td><td>Customer review information</td></tr>
+              <tr><td>products</td><td>32,951</td><td>Product master</td></tr>
+              <tr><td>sellers</td><td>3,095</td><td>Seller master</td></tr>
+              <tr><td>geolocation</td><td>1,000,163</td><td>Geographic reference</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="case-callout">
+          <strong>Grain control matters.</strong>
+          <span>Order items and payment records can multiply rows when joined directly. They are aggregated to order level before being used in customer- or order-level metrics.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">CUSTOMER ANALYTICS</div>
+          <h2>97% of active customers were one-time buyers.</h2>
+          <p>The customer analysis uses <strong>customer_unique_id</strong> to identify the underlying customer across potentially multiple customer_id records.</p>
+        </div>
+        <div class="case-kpi-grid">
+          <div class="case-kpi"><strong>93,358</strong><span>Active customers</span></div>
+          <div class="case-kpi"><strong>90,557</strong><span>One-time customers</span></div>
+          <div class="case-kpi"><strong>2,801</strong><span>Repeat customers</span></div>
+          <div class="case-kpi"><strong>R$15.42M</strong><span>Observed customer value</span></div>
+        </div>
+        <div class="case-insight"><span>KEY INSIGHT</span><strong>97% of active customers made only one completed purchase.</strong><p>One-time behaviour is not treated as confirmed churn because the dataset has a fixed observation end date.</p></div>
+        <div class="case-image-grid">
+          <figure><img src="https://raw.githubusercontent.com/vijaybsbs/Target-Brazil-Ecommerce-Analytics/main/Dashboard/1.%20Customer%20Overview%20%26%20Behaviour.png" alt="Target Brazil customer overview dashboard"><figcaption>Customer Overview & Behaviour</figcaption></figure>
+          <figure><img src="https://raw.githubusercontent.com/vijaybsbs/Target-Brazil-Ecommerce-Analytics/main/Dashboard/2.%20Customer%20Value%20%26%20RFM.png" alt="Target Brazil customer value and RFM dashboard"><figcaption>Customer Value & RFM</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-muted">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">VALUE CONCENTRATION & HIGH-VALUE PATHWAYS</div>
+          <h2>Value is concentrated — but the pathway differs.</h2>
+          <p><strong>48.85% of customers account for 80% of observed customer value.</strong> High-value one-time customers tend to generate value through one high-ticket purchase, while high-value repeat customers reach similar observed value through multiple lower-value purchases.</p>
+        </div>
+        <div class="case-kpi-grid two">
+          <div class="case-kpi"><strong>21,586</strong><span>High-value one-time customers</span></div>
+          <div class="case-kpi"><strong>1,771</strong><span>High-value repeat customers</span></div>
+          <div class="case-kpi"><strong>R$390.63</strong><span>Avg. value — one-time</span></div>
+          <div class="case-kpi"><strong>R$415.46</strong><span>Avg. value — repeat</span></div>
+        </div>
+        <div class="case-image-grid">
+          <figure><img src="https://raw.githubusercontent.com/vijaybsbs/Target-Brazil-Ecommerce-Analytics/main/Dashboard/3.%20Recent%20High%20Value%20Customer%20Pathways.png" alt="Target Brazil high value customer pathways dashboard"><figcaption>High-Value Customer Pathways</figcaption></figure>
+          <figure><img src="https://raw.githubusercontent.com/vijaybsbs/Target-Brazil-Ecommerce-Analytics/main/Dashboard/4.%20Recent%20High%20Value%20Customer%20Profile.png" alt="Target Brazil recent high value customer profile dashboard"><figcaption>Recent High-Value Customer Profile</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">RECENT HIGH-VALUE CUSTOMER PROFILE</div>
+          <h2>5,515 recent high-value one-time customers.</h2>
+          <p>Defined using project-specific RFM thresholds: M4 observed customer value &gt; ₹182.40, R4 last purchase within 163 days of 17 October 2018, and F1 exactly one completed order.</p>
+        </div>
+        <div class="case-stat-list">
+          <div><strong>R$2.20M</strong><span>Observed customer value</span></div>
+          <div><strong>R$399.30</strong><span>Average order value</span></div>
+          <div><strong>61.24%</strong><span>SP + RJ + MG share</span></div>
+          <div><strong>80.82%</strong><span>Single-item orders</span></div>
+          <div><strong>93.82%</strong><span>Delivered before estimated date</span></div>
+          <div><strong>79.87%</strong><span>Positive reviews</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-muted">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">OPERATIONS & CUSTOMER EXPERIENCE</div>
+          <h2>Delivery performance connects with the customer experience.</h2>
+        </div>
+        <div class="case-two-col">
+          <div class="case-panel"><strong>91.78%</strong><span>of delivered orders arrived before the estimated date.</span><small>Average delivery variance: −11.16 days.</small></div>
+          <div class="case-panel"><strong>62.47%</strong><span>of late deliveries received bad reviews.</span><small>Late deliveries also showed only 16.60% excellent reviews.</small></div>
+        </div>
+        <p class="case-note">These are observed associations, not causal conclusions. State-level freight/delivery relationships and delivery/review relationships should not be interpreted as proof that one variable causes the other.</p>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+        <div class="case-section-head">
+          <div class="eyebrow">ANALYTICAL WORKFLOW</div>
+          <h2>From relational data to business insight.</h2>
+        </div>
+        <div class="case-flow">
+          <span>Data Model</span><i>→</i><span>Data Quality</span><i>→</i><span>GoogleSQL</span><i>→</i><span>Customer Analytics</span><i>→</i><span>Looker Studio</span><i>→</i><span>Business Insights</span>
+        </div>
+        <div class="case-final-grid">
+          <div><h3>Tools</h3><p>Google BigQuery · GoogleSQL · Looker Studio · GitHub</p></div>
+          <div><h3>Deliverables</h3><p>SQL phases · ER diagram · analytical views · customer datasets · four-section dashboard · detailed report</p></div>
+          <div><h3>Limitations</h3><p>Observation ends 17 October 2018; one-time behaviour is not confirmed churn; observed customer value is historical transaction value, not predicted CLV or profit.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><span>© Vijay Kumar</span><span>Business Analytics · Data Analytics · BI</span></div></footer>
+</body>
+</html>
