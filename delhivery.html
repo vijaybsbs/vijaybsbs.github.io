@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Delhivery Logistics Data Analysis and Feature Engineering — Python logistics analytics case study by Vijay Kumar.">
+<meta name="author" content="Vijay Kumar">
+<title>Delhivery Logistics Analysis | Vijay Kumar</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="case-study-page">
+<header class="nav-wrap"><nav class="nav container">
+<a class="brand" href="index.html">VK<span>.</span></a>
+<div class="nav-links"><a href="index.html#work">Projects</a><a href="index.html#dashboards">Dashboards</a><a href="index.html#experience">Experience</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></div>
+</nav></header>
+<main>
+<section class="case-hero container">
+<div>
+<div class="eyebrow">CASE STUDY · PYTHON & FEATURE ENGINEERING</div>
+<h1>Delhivery Logistics<br><span>Data Analysis.</span></h1>
+<p class="case-lead">An end-to-end logistics analytics case study focused on data cleaning, analytical grain control, trip-level aggregation, feature engineering and comparison of observed operational performance with routing-system estimates.</p>
+<div class="case-tags"><span>Python</span><span>Pandas</span><span>Feature Engineering</span><span>Logistics Analytics</span><span>EDA</span></div>
+<div class="case-actions">
+<a class="btn primary" href="https://github.com/vijaybsbs/Delhivery-Logistics-Data-Analysis-and-Feature-Engineering" target="_blank" rel="noopener">View GitHub ↗</a>
+<a class="btn secondary" href="index.html#work">All projects</a>
+</div>
+</div>
+<div class="case-hero-visual"><img src="assets/projects/delhivery-cover.svg" alt="Delhivery logistics analysis visual"></div>
+</section>
+
+<section class="case-section case-muted"><div class="container">
+<div class="case-section-head"><div class="eyebrow">BUSINESS PROBLEM</div><h2>Turn raw logistics records into operationally useful data.</h2>
+<p>The objective was to understand and process logistics operations data while maintaining the correct analytical grain, consolidating trip records and creating structured features for delivery-performance analysis.</p></div>
+<div class="case-question-grid">
+<div class="case-question">What is the correct analytical grain for the operational data?</div>
+<div class="case-question">How should multiple records belonging to one trip be consolidated?</div>
+<div class="case-question">How can geographic fields be extracted from source and destination data?</div>
+<div class="case-question">Which time-based features are useful for trip analysis?</div>
+<div class="case-question">How does actual performance compare with OSRM estimates?</div>
+<div class="case-question">How can the cleaned dataset support downstream logistics analytics?</div>
+</div></div></section>
+
+<section class="case-section container"><div class="case-section-head"><div class="eyebrow">DATASET</div><h2>144,867 operational records across 14,817 trips.</h2><p>The dataset covers approximately 27 days of operations, from 12 September 2018 to 8 October 2018, and includes trip, route, centre, timestamp, distance, duration and routing-estimate fields.</p></div>
+<div class="case-kpi-grid">
+<div class="case-kpi"><strong>144,867</strong><span>Operational records</span></div>
+<div class="case-kpi"><strong>14,817</strong><span>Unique trips</span></div>
+<div class="case-kpi"><strong>~27 days</strong><span>Observation period</span></div>
+<div class="case-kpi"><strong>19</strong><span>Final analytical features</span></div>
+</div>
+<div class="case-callout"><strong>Core data dimensions</strong><div>Trip identifiers · route schedules · route type · source/destination centres · operational timestamps · actual distance/time · OSRM distance/time · segment-level metrics</div></div>
+</div></section>
+
+<section class="case-section case-muted"><div class="container"><div class="case-section-head"><div class="eyebrow">ANALYTICAL GRAIN</div><h2>Get the unit of analysis right before calculating KPIs.</h2><p>Multiple operational records can belong to the same trip. The project therefore treats trip-level aggregation as a key analytical step before deriving final trip-level metrics.</p></div>
+<div class="case-flow"><span>Raw Records</span><i>→</i><span>Trip Identifier</span><i>→</i><span>Trip-Level Aggregation</span><i>→</i><span>Feature Engineering</span><i>→</i><span>Operational Analysis</span></div>
+<div class="case-final-grid">
+<div><h3>Avoid duplicate trip counts</h3><p>Raw operational records should not automatically be treated as independent trips.</p></div>
+<div><h3>Protect distance metrics</h3><p>Aggregating at the trip level helps avoid inflated or duplicated distance calculations.</p></div>
+<div><h3>Protect time metrics</h3><p>Trip-level aggregation provides a more appropriate basis for duration comparisons.</p></div>
+<div><h3>Enable route comparison</h3><p>A controlled grain makes route, source and destination comparisons more meaningful.</p></div>
+</div></div></section>
+
+<section class="case-section container"><div class="case-section-head"><div class="eyebrow">DATA PREPARATION</div><h2>Clean first. Engineer second.</h2><p>The notebook covers dataset profiling, timestamp conversion, missing-value assessment, duplicate checks, standardisation, trip aggregation and final feature preparation.</p></div>
+<div class="case-two-col">
+<div class="case-panel"><strong>293</strong><span>Missing source-name values</span><small>Less than 0.3% of the 144,867 operational records.</small></div>
+<div class="case-panel"><strong>261</strong><span>Missing destination-name values</span><small>Also less than 0.3% of the operational records.</small></div>
+<div class="case-panel"><strong>0</strong><span>Duplicate records identified</span><small>No duplicate records were identified in the analysis.</small></div>
+<div class="case-panel"><strong>19</strong><span>Final analytical features</span><small>Structured feature set after preprocessing.</small></div>
+</div>
+</div></section>
+
+<section class="case-section case-muted"><div class="container"><div class="case-section-head"><div class="eyebrow">FEATURE ENGINEERING</div><h2>Convert operational fields into analytical dimensions.</h2></div>
+<div class="case-final-grid">
+<div><h3>Geographic features</h3><p>Source and destination strings are parsed into dimensions such as city, place code and state/region.</p></div>
+<div><h3>Time features</h3><p>Timestamp fields are transformed into year, month, day, trip duration and operational time measures.</p></div>
+<div><h3>Duration features</h3><p>Duration measures are derived from operational timestamps and compared with scan-to-scan measures for validation.</p></div>
+<div><h3>Routing comparison</h3><p>Actual distance/time are compared with OSRM distance/time to examine the gap between observed operations and routing estimates.</p></div>
+<div><h3>Segment-level metrics</h3><p>Segment actual time, OSRM time and OSRM distance provide additional operational context.</p></div>
+<div><h3>Geographic footprint</h3><p>The dataset contains more than 1,500 source/destination logistics-centre locations for geographic analysis.</p></div>
+</div></div></section>
+
+<section class="case-section container"><div class="case-section-head"><div class="eyebrow">KEY FINDINGS</div><h2>Observed operations versus routing estimates.</h2><p>The central analytical comparison examines actual operational performance against OSRM routing-system estimates.</p></div>
+<div class="case-kpi-grid">
+<div class="case-kpi"><strong>417 min</strong><span>Average actual trip time</span></div>
+<div class="case-kpi"><strong>214 min</strong><span>Average OSRM time</span></div>
+<div class="case-kpi"><strong>234 km</strong><span>Average actual distance</span></div>
+<div class="case-kpi"><strong>285 km</strong><span>Average OSRM distance</span></div>
+</div>
+<div class="case-insight"><span>ACTUAL VS OSRM TIME</span><strong>Average actual trip time was approximately 1.95× the OSRM estimate.</strong><p>The observed gap is a descriptive finding from this dataset. It indicates that routing estimates and actual operational duration should be evaluated as separate measures when analysing delivery performance and capacity.</p></div>
+</div></section>
+
+<section class="case-section case-muted"><div class="container"><div class="case-section-head"><div class="eyebrow">DISTANCE & OPERATIONAL CONTEXT</div><h2>Time and distance tell different stories.</h2><p>The analysis also shows that observed actual distance was lower than the corresponding OSRM estimate.</p></div>
+<div class="case-two-col">
+<div class="case-panel"><strong>234 km</strong><span>Average actual distance</span><small>Observed operational distance in the analytical dataset.</small></div>
+<div class="case-panel"><strong>285 km</strong><span>Average OSRM distance</span><small>Routing-system estimate in the dataset.</small></div>
+<div class="case-panel"><strong>~18% lower</strong><span>Actual vs OSRM distance</span><small>Average observed distance was approximately 18% below the OSRM estimate.</small></div>
+<div class="case-panel"><strong>1,500+</strong><span>Source/destination locations</span><small>Broad geographic footprint for downstream route analysis.</small></div>
+</div>
+<div class="case-callout"><strong>Analytical consideration</strong><div>Actual and OSRM metrics represent different concepts and should not automatically be treated as interchangeable measures or operational targets.</div></div>
+</div></section>
+
+<section class="case-section container"><div class="case-section-head"><div class="eyebrow">BUSINESS APPLICATIONS</div><h2>What the structured dataset enables.</h2></div>
+<div class="case-final-grid">
+<div><h3>Logistics performance</h3><p>Analyse delivery duration, route performance, actual distance and actual-vs-estimated time.</p></div>
+<div><h3>Geographic analysis</h3><p>Compare source regions, destination regions, city/state patterns and route-level differences.</p></div>
+<div><h3>Route analysis</h3><p>Examine route type, route schedules and trip-level operational performance.</p></div>
+<div><h3>Operational KPIs</h3><p>Track actual time, estimated time, actual distance, estimated distance and the gaps between them.</p></div>
+</div></section>
+
+<section class="case-section case-muted"><div class="container"><div class="case-section-head"><div class="eyebrow">ANALYTICAL FRAMEWORK</div><h2>Understand → Clean → Aggregate → Engineer → Validate → Analyse.</h2><p>The project is structured as a repeatable data-preparation and operational-analysis workflow.</p></div>
+<div class="case-flow"><span>Raw Logistics Data</span><i>→</i><span>Data Profiling</span><i>→</i><span>Data Cleaning</span><i>→</i><span>Grain Control</span><i>→</i><span>Trip Aggregation</span><i>→</i><span>Feature Engineering</span><i>→</i><span>Operational Insights</span></div>
+</div></section>
+
+<section class="case-section container"><div class="case-section-head"><div class="eyebrow">TECH STACK</div><h2>Python for logistics data transformation.</h2><p>The project uses Python-based data preparation and feature engineering to convert raw operational records into a structured analytical dataset.</p></div>
+<div class="case-tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Datetime Manipulation</span><span>Data Cleaning</span><span>Feature Engineering</span><span>Jupyter / Google Colab</span><span>GitHub</span></div>
+</div></section>
+
+<section class="case-section case-muted"><div class="container"><div class="case-section-head"><div class="eyebrow">ANALYTICAL CONSIDERATIONS</div><h2>Keep operational metrics in context.</h2></div>
+<div class="case-final-grid">
+<div><h3>Correct grain</h3><p>Raw operational records should not automatically be treated as independent trips.</p></div>
+<div><h3>Trip identifiers</h3><p>Trip-level identifiers are important for maintaining the correct analytical grain.</p></div>
+<div><h3>Actual vs OSRM</h3><p>Actual and routing-system metrics represent different concepts and should be interpreted separately.</p></div>
+<div><h3>Routing estimates</h3><p>OSRM estimates should not automatically be treated as operational targets.</p></div>
+<div><h3>Geographic fields</h3><p>Location fields derived from semi-structured strings should be validated before detailed geographic reporting.</p></div>
+<div><h3>Descriptive evidence</h3><p>The observed time and distance gaps are descriptive findings from this dataset and should not be interpreted as causal evidence.</p></div>
+</div></div></section>
+
+<section class="contact-section"><div class="container contact"><div><div class="eyebrow">PROJECT RESOURCES</div><h2>Explore the logistics<br><span>analysis in detail.</span></h2></div>
+<div class="contact-actions"><a class="btn primary" href="https://github.com/vijaybsbs/Delhivery-Logistics-Data-Analysis-and-Feature-Engineering" target="_blank" rel="noopener">GitHub ↗</a><a class="btn secondary" href="index.html#work">All projects</a></div>
+</div></section>
+</main>
+<footer class="footer container"><span>© <span id="year"></span> Vijay Kumar</span><span>Business Analytics · Data Analytics · BI</span></footer>
+<script src="script.js"></script>
+</body></html>
