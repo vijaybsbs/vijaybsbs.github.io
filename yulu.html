@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Yulu Bike Rental Demand Analysis — Python and statistical hypothesis testing case study by Vijay Kumar.">
+<meta name="author" content="Vijay Kumar">
+<title>Yulu Bike Rental Demand Analysis | Vijay Kumar</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="case-study-page">
+<header class="nav-wrap"><nav class="nav container">
+<a class="brand" href="index.html">VK<span>.</span></a>
+<div class="nav-links"><a href="index.html#work">Projects</a><a href="index.html#dashboards">Dashboards</a><a href="index.html#experience">Experience</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></div>
+</nav></header>
+<main>
+<section class="case-hero container">
+<div>
+<div class="eyebrow">CASE STUDY · PYTHON & STATISTICS</div>
+<h1>Yulu Bike Rental<br><span>Demand Analysis.</span></h1>
+<p class="case-lead">A business analytics and statistical hypothesis-testing case study examining how working days, seasons, weather and environmental conditions relate to shared electric-cycle rental demand.</p>
+<div class="case-tags"><span>Python</span><span>Pandas</span><span>EDA</span><span>Hypothesis Testing</span><span>Statistics</span></div>
+<div class="case-actions">
+<a class="btn primary" href="https://github.com/vijaybsbs/Yulu-Bike-Rental-Demand-Analysis" target="_blank" rel="noopener">View GitHub ↗</a>
+<a class="btn secondary" href="index.html#work">All projects</a>
+</div>
+</div>
+<div class="case-hero-visual"><img src="assets/projects/yulu-cover.svg" alt="Yulu bike rental demand analysis visual"></div>
+</section>
+
+<section class="case-section case-muted"><div class="container">
+<div class="case-section-head"><div class="eyebrow">BUSINESS PROBLEM</div><h2>Understand the factors associated with rental demand.</h2>
+<p>Yulu wants to understand the factors affecting demand for its shared electric cycles. The analysis asks which variables significantly affect demand and how well these variables explain differences in rental demand.</p></div>
+<div class="case-question-grid">
+<div class="case-question">Does rental demand differ between working and non-working days?</div>
+<div class="case-question">Does demand differ across seasons?</div>
+<div class="case-question">Does weather condition relate to different demand levels?</div>
+<div class="case-question">Are weather and season statistically associated?</div>
+<div class="case-question">Which observed patterns are statistically supported?</div>
+<div class="case-question">How can evidence support operational planning?</div>
+</div></div></section>
+
+<section class="case-section container"><div class="case-section-head"><div class="eyebrow">DATASET</div><h2>10,886 hourly observations across 2011–2012.</h2><p>The dataset contains hourly rental observations with demand, calendar, weather and environmental variables.</p></div>
+<div class="case-kpi-grid">
+<div class="case-kpi"><strong>10,886</strong><span>Hourly observations</span></div>
+<div class="case-kpi"><strong>2011–2012</strong><span>Observation period</span></div>
+<div class="case-kpi"><strong>12</strong><span>Core dataset fields</span></div>
+<div class="case-kpi"><strong>4</strong><span>Primary hypothesis areas</span></div>
+</div>
+<div class="case-callout"><strong>Key variables</strong><div>datetime · season · holiday · workingday · weather · temp · atemp · humidity · windspeed · casual · registered · count</div></div>
+</div></section>
+
+<section class="case-section case-muted"><div class="container"><div class="case-section-head"><div class="eyebrow">ANALYTICAL APPROACH</div><h2>Move from visual patterns to statistical evidence.</h2><p>The project deliberately separates observed differences in the data from conclusions supported by hypothesis testing.</p></div>
+<div class="case-flow"><span>Business Question</span><i>→</i><span>Data Quality</span><i>→</i><span>EDA</span><i>→</i><span>Hypothesis</span><i>→</i><span>Statistical Test</span><i>→</i><span>Evidence</span><i>→</i><span>Business Interpretation</span></div>
+<div class="case-final-grid">
+<div><h3>Univariate analysis</h3><p>Examines demand distribution, season, weather, working days, temperature, humidity, windspeed and user types.</p></div>
+<div><h3>Bivariate analysis</h3><p>Explores demand against season, weather, working day, temperature, humidity and windspeed to identify patterns worth testing.</p></div>
+<div><h3>Hypothesis formulation</h3><p>Defines null and alternative hypotheses before selecting the statistical test.</p></div>
+<div><h3>Statistical decision</h3><p>Uses test statistics and p-values to distinguish observed differences from statistically supported evidence.</p></div>
+</div></div></section>
+
+<section class="case-section container"><div class="case-section-head"><div class="eyebrow">HYPOTHESIS TESTING</div><h2>What the statistical tests showed.</h2><p>The project uses a two-sample t-test, ANOVA and Chi-square test to evaluate the stated business questions.</p></div>
+<div class="case-two-col">
+<div class="case-panel"><strong>p = 0.2264</strong><span>Working day vs non-working day</span><small>Two-sample t-test. The analysis did not find a statistically significant difference.</small></div>
+<div class="case-panel"><strong>F = 236.95</strong><span>Seasonal demand</span><small>ANOVA; p = 6.16e-149. Demand differs significantly across seasons.</small></div>
+<div class="case-panel"><strong>F = 65.53</strong><span>Weather and demand</span><small>ANOVA; p = 5.48e-42. Demand differs significantly across weather conditions.</small></div>
+<div class="case-panel"><strong>χ² = 46.10</strong><span>Season × weather</span><small>Chi-square; df = 6, p = 2.83e-8. Season and weather are statistically associated.</small></div>
+</div>
+</div></section>
+
+<section class="case-section case-muted"><div class="container"><div class="case-section-head"><div class="eyebrow">BUSINESS INTERPRETATION</div><h2>Operational planning needs more than a working-day flag.</h2><p>The statistical results provide a structured basis for thinking about demand planning. In this analysis, seasonal and weather differences were statistically supported, while the working-day comparison was not.</p></div>
+<div class="case-final-grid">
+<div><h3>Fleet availability</h3><p>Demand patterns can support better allocation of available bikes across expected demand conditions.</p></div>
+<div><h3>Seasonal planning</h3><p>Significant seasonal differences provide evidence for incorporating seasonality into capacity and operational planning.</p></div>
+<div><h3>Weather-aware operations</h3><p>Weather-related demand differences can inform operational preparedness and planning.</p></div>
+<div><h3>Customer analysis</h3><p>Separating casual and registered users provides additional context for understanding demand behaviour.</p></div>
+<div><h3>Demand forecasting</h3><p>The analytical dataset provides a foundation for future predictive modelling.</p></div>
+<div><h3>Working-day interpretation</h3><p>The non-significant test result suggests working-day status alone should not be treated as a statistically supported demand differentiator in this analysis.</p></div>
+</div></div></section>
+
+<section class="case-section container"><div class="case-section-head"><div class="eyebrow">STATISTICAL THINKING</div><h2>Evidence before interpretation.</h2><p>The project follows a repeatable statistical workflow rather than treating every visible chart difference as a business conclusion.</p></div>
+<div class="case-insight"><span>CORE FRAMEWORK</span><strong>Business Question → H₀ / H₁ → Variables & Groups → Test Selection → Test Statistic & p-value → Statistical Decision → Business Interpretation</strong><p>The emphasis is on translating statistical evidence into a meaningful business conclusion while keeping statistical significance separate from causation.</p></div>
+</div></section>
+
+<section class="case-section case-muted"><div class="container"><div class="case-section-head"><div class="eyebrow">TECH STACK</div><h2>Python for analytical reasoning.</h2><p>The project combines data manipulation, visualization and statistical testing in a notebook-based workflow.</p></div>
+<div class="case-tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>SciPy / Statistics</span><span>Jupyter / Google Colab</span><span>GitHub</span></div>
+</div></section>
+
+<section class="case-section container"><div class="case-section-head"><div class="eyebrow">LIMITATIONS</div><h2>Interpret the evidence in context.</h2></div>
+<div class="case-final-grid">
+<div><h3>Significance ≠ causation</h3><p>Statistical significance does not automatically establish a causal relationship.</p></div>
+<div><h3>Multiple demand drivers</h3><p>Rental demand is influenced by multiple factors simultaneously, so individual tests do not explain the full demand mechanism.</p></div>
+<div><h3>Historical dataset</h3><p>The dataset represents a historical observation period and may not represent current Yulu demand.</p></div>
+<div><h3>Weather categories</h3><p>Weather categories can hide variation within individual conditions.</p></div>
+<div><h3>Decision context</h3><p>Operational decisions should combine statistical evidence with current operational, financial and market information.</p></div>
+</div></section>
+
+<section class="contact-section"><div class="container contact"><div><div class="eyebrow">PROJECT RESOURCES</div><h2>Explore the analysis<br><span>in detail.</span></h2></div>
+<div class="contact-actions"><a class="btn primary" href="https://github.com/vijaybsbs/Yulu-Bike-Rental-Demand-Analysis" target="_blank" rel="noopener">GitHub ↗</a><a class="btn secondary" href="index.html#work">All projects</a></div>
+</div></section>
+</main>
+<footer class="footer container"><span>© <span id="year"></span> Vijay Kumar</span><span>Business Analytics · Data Analytics · BI</span></footer>
+<script src="script.js"></script>
+</body></html>
