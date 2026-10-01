@@ -24,7 +24,16 @@
 .hero-experience strong{display:block;font-size:17px;letter-spacing:-.035em;color:#102958;white-space:nowrap}
 .hero-experience small{display:block;color:#1f66e4;font-size:9px;line-height:1.35;margin-top:7px}
 .hero-description{font-size:14px;line-height:1.55;color:#617089;max-width:760px;margin:20px 0 20px}
-.hero-banner .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hero-banner .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}
+.hero-banner .hero-actions .btn,.hero-banner .hero-actions .text-link{display:inline-flex;align-items:center;justify-content:center;height:48px;border-radius:999px;padding:0 22px;font-size:13px;font-weight:800;letter-spacing:-.01em;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease}
+.hero-banner .hero-actions .btn:hover,.hero-banner .hero-actions .text-link:hover{transform:translateY(-2px)}
+.hero-banner .hero-actions .btn.primary{background:#0d1b34;color:#fff;border:1px solid #0d1b34;box-shadow:0 10px 24px rgba(13,27,52,.13)}
+.hero-banner .hero-actions .btn.primary:hover{background:#1455e8;border-color:#1455e8;box-shadow:0 12px 28px rgba(20,85,232,.18)}
+.hero-banner .hero-actions .btn.secondary{background:rgba(255,255,255,.82);color:#102958;border:1px solid #d9e0ea;box-shadow:0 5px 16px rgba(22,45,80,.04)}
+.hero-banner .hero-actions .btn.secondary:hover{background:#fff;border-color:#9db7e7}
+.hero-banner .hero-actions .text-link{background:transparent;color:#1455e8;border:1px solid transparent;padding:0 17px}
+.hero-banner .hero-actions .text-link:hover{background:#edf3ff;border-color:#d7e4ff}
+.hero-banner .hero-actions .btn span{font-size:16px;margin-left:7px;line-height:1}
 .hero-banner .btn{padding:11px 18px}
 .hero-banner .text-link{font-size:13px}
 .hero-side{position:relative;z-index:2;grid-column:2;grid-row:1 / span 2;min-height:720px;border-left:1px solid rgba(189,204,225,.7);padding:40px 30px 120px 30px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;background:linear-gradient(160deg,rgba(233,241,252,.88),rgba(248,250,253,.92))}
