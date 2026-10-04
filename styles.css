@@ -141,3 +141,33 @@
     font-size:clamp(26px,8.3vw,30px);
   }
 }
+
+/* Hero vertical spacing optimization */
+@media(min-width:851px){
+  .hero-v2{
+    min-height:560px;
+    padding:48px 0 40px;
+  }
+  .hero-profile{
+    min-height:510px;
+  }
+  .trust{
+    padding-top:20px;
+    padding-bottom:20px;
+  }
+  .trust + .section{
+    padding-top:56px;
+  }
+}
+
+@media(max-width:850px){
+  .trust + .section{
+    padding-top:56px;
+  }
+}
+
+@media(max-width:520px){
+  .trust + .section{
+    padding-top:48px;
+  }
+}
