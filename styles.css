@@ -284,3 +284,51 @@
     height:24px;
   }
 }
+
+/* Hero education credentials — university logos */
+.hero-v2 .hero-meta{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px 56px;
+  max-width:720px;
+}
+.hero-v2 .hero-education-meta{
+  display:grid;
+  grid-template-columns:38px 1fr;
+  align-items:center;
+  column-gap:12px;
+}
+.hero-v2 .hero-education-meta>img{
+  width:38px;
+  height:38px;
+  display:block;
+  object-fit:contain;
+  object-position:center;
+}
+.hero-v2 .hero-education-copy{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.hero-v2 .hero-education-copy strong{
+  font-size:15px;
+  color:#102958;
+  letter-spacing:-.02em;
+}
+.hero-v2 .hero-education-copy span{
+  font-size:13px;
+  color:var(--muted-2);
+}
+@media(max-width:520px){
+  .hero-v2 .hero-meta{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .hero-v2 .hero-education-meta{
+    grid-template-columns:34px 1fr;
+  }
+  .hero-v2 .hero-education-meta>img{
+    width:34px;
+    height:34px;
+  }
+}
