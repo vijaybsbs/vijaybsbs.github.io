@@ -223,3 +223,75 @@
   border-color:#b9c8df;
   transform:translateY(-2px);
 }
+
+/* Professional experience logo strip */
+.logo-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:clamp(20px,4vw,52px);
+  flex:1;
+  min-width:0;
+}
+.company-logo{
+  height:32px;
+  min-width:72px;
+  flex:1 1 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:.72;
+  transition:opacity .2s ease,transform .2s ease;
+}
+.company-logo img{
+  display:block;
+  width:auto;
+  max-width:150px;
+  height:28px;
+  object-fit:contain;
+  filter:grayscale(1);
+}
+.company-logo.huezo-logo img,
+.company-logo.featherlite-logo img{
+  width:34px;
+  height:34px;
+  filter:grayscale(1);
+}
+.company-logo:hover{
+  opacity:1;
+  transform:translateY(-1px);
+}
+@media(max-width:850px){
+  .trust{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:14px;
+  }
+  .logo-row{
+    width:100%;
+    justify-content:space-between;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .company-logo{
+    flex:0 1 calc(33.333% - 14px);
+  }
+}
+@media(max-width:520px){
+  .logo-row{
+    gap:16px 10px;
+  }
+  .company-logo{
+    flex-basis:calc(33.333% - 8px);
+    height:30px;
+  }
+  .company-logo img{
+    max-width:112px;
+    height:24px;
+  }
+  .company-logo.huezo-logo img,
+  .company-logo.featherlite-logo img{
+    width:30px;
+    height:30px;
+  }
+}
