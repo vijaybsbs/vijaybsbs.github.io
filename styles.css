@@ -251,12 +251,6 @@
   object-fit:contain;
   filter:grayscale(1);
 }
-.company-logo.huezo-logo img,
-.company-logo.featherlite-logo img{
-  width:34px;
-  height:34px;
-  filter:grayscale(1);
-}
 .company-logo:hover{
   opacity:1;
   transform:translateY(-1px);
@@ -288,10 +282,5 @@
   .company-logo img{
     max-width:112px;
     height:24px;
-  }
-  .company-logo.huezo-logo img,
-  .company-logo.featherlite-logo img{
-    width:30px;
-    height:30px;
   }
 }
