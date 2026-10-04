@@ -193,3 +193,33 @@
 @media(max-width:520px){
   .trust + .section{padding-top:38px}
 }
+
+/* Unified hero CTA styling */
+.hero-v2 .hero-actions .btn,
+.hero-v2 .hero-actions .text-link{
+  height:54px;
+  min-height:54px;
+  padding:0 24px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-size:14px;
+  font-weight:800;
+  line-height:1;
+  box-sizing:border-box;
+  white-space:nowrap;
+}
+.hero-v2 .hero-actions .text-link{
+  background:#fff;
+  color:#1455e8;
+  border:1px solid #dfe4ec;
+  box-shadow:0 4px 14px rgba(22,45,80,.04);
+  margin-left:0;
+}
+.hero-v2 .hero-actions .text-link:hover{
+  color:#0d3fb6;
+  border-color:#b9c8df;
+  transform:translateY(-2px);
+}
