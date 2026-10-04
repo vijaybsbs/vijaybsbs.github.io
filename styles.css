@@ -332,3 +332,49 @@
     height:34px;
   }
 }
+
+/* Hero meta alignment — experience/toolkit on top, education below */
+.hero-v2 .hero-meta{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:30px 72px;
+  align-items:start;
+}
+.hero-v2 .hero-meta>div{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.hero-v2 .hero-education-meta{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:7px;
+}
+.hero-v2 .hero-education-meta>strong{
+  font-size:15px;
+  color:#102958;
+  letter-spacing:-.02em;
+}
+.hero-v2 .hero-education-meta>span{
+  font-size:13px;
+  color:var(--muted-2);
+}
+.hero-v2 .hero-education-meta>img{
+  width:auto;
+  height:38px;
+  max-width:145px;
+  display:block;
+  object-fit:contain;
+  object-position:left center;
+  margin-top:3px;
+}
+@media(max-width:520px){
+  .hero-v2 .hero-meta{
+    grid-template-columns:1fr 1fr;
+    gap:24px 28px;
+  }
+  .hero-v2 .hero-education-meta>img{
+    height:32px;
+    max-width:120px;
+  }
+}
