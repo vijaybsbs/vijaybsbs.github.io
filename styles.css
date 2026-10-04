@@ -171,3 +171,25 @@
     padding-top:48px;
   }
 }
+
+/* Global section spacing — compact portfolio rhythm */
+:root{--section-y:clamp(42px,5vw,64px)}
+.section{padding-top:var(--section-y);padding-bottom:var(--section-y)}
+.section-head{margin-bottom:28px}
+.insights{padding-top:var(--section-y);padding-bottom:var(--section-y)}
+.learning{padding-top:var(--section-y);padding-bottom:var(--section-y)}
+.contact-section{padding-top:var(--section-y);padding-bottom:var(--section-y)}
+.trust{margin-bottom:0}
+.trust + .section{padding-top:48px}
+
+@media(min-width:851px){
+  .trust + .section{padding-top:48px}
+  .timeline{margin-top:32px}
+  .education-grid{margin-top:30px}
+}
+@media(max-width:850px){
+  .trust + .section{padding-top:44px}
+}
+@media(max-width:520px){
+  .trust + .section{padding-top:38px}
+}
