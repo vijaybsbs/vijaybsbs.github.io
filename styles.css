@@ -135,3 +135,9 @@
     min-height:360px;
   }
 }
+
+@media(max-width:520px){
+  .hero-v2 h1{
+    font-size:clamp(26px,8.3vw,30px);
+  }
+}
