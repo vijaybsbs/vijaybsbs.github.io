@@ -93,13 +93,13 @@ h3{font-size:1.25rem;line-height:1.25;letter-spacing:-.02em;font-weight:650}
 @media (prefers-color-scheme:dark){.logo-row li{background:#e6ecea;border-radius:var(--r);padding:8px 14px;display:flex;align-items:center}.logo-row img{opacity:.85}}
 
 /* Screenshots with graceful empty state */
-.shot{position:relative;margin:0;aspect-ratio:16/10;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.shot{position:relative;margin:0;aspect-ratio:4/3;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .shot img{width:100%;height:100%;object-fit:cover;object-position:top}
 .shot-missing{display:none}
 .shot.is-missing{display:grid;place-items:center;border-style:dashed;background:var(--accent-soft)}
 .shot.is-missing img{display:none}
 .shot.is-missing .shot-missing{display:block;padding:16px;text-align:center;font-size:14px;color:var(--muted)}
-.pair .shot{aspect-ratio:16/9}
+
 .shot[data-shot="zomato"] img{object-fit:contain;background:#fff}
 
 /* Projects */
@@ -133,6 +133,7 @@ h3{font-size:1.25rem;line-height:1.25;letter-spacing:-.02em;font-weight:650}
 .tab{min-height:44px;padding:0 18px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--muted);font:inherit;font-size:15px;font-weight:600;white-space:nowrap;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
 .tab:hover{color:var(--ink)}
 .tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.panel{max-width:960px}
 .panel[hidden]{display:none}
 .panel-meta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:20px}
 .panel-meta p{color:var(--muted)}

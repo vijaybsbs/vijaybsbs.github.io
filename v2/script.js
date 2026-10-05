@@ -35,7 +35,19 @@
 
   // Screenshots that have not been added yet show a labelled placeholder
   document.querySelectorAll('.shot img').forEach((img) => {
-    const mark = () => img.closest('.shot').classList.add('is-missing');
+    const mark = () => {
+      const shot = img.closest('.shot');
+      shot.classList.add('is-missing');
+      // A dashboard with no image yet should not show up as an empty tab
+      const panel = shot.closest('.panel');
+      const tab = panel && tabs.find((t) => t.getAttribute('aria-controls') === panel.id);
+      if (!tab) return;
+      tab.hidden = true;
+      if (tab.getAttribute('aria-selected') === 'true') {
+        const first = tabs.find((t) => !t.hidden);
+        if (first) select(first);
+      }
+    };
     img.addEventListener('error', mark);
     if (img.complete && img.naturalWidth === 0) mark();
   });
