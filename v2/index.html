@@ -18,6 +18,7 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"></div>
 
   <header class="nav-wrap">
     <nav class="nav container" aria-label="Main">
@@ -37,32 +38,76 @@
   <main id="main">
     <section class="hero container" id="top">
       <div class="hero-copy">
-        <h1>Business experience, backed by data.</h1>
+        <h1>
+          <span class="w" style="--i:0">Business</span>
+          <span class="w" style="--i:1">experience,</span>
+          <span class="mark"><span class="w" style="--i:2">backed</span>
+          <span class="w" style="--i:3">by</span>
+          <span class="w" style="--i:4">data.</span></span>
+        </h1>
         <p class="lead">11+ years in sales and operations, now answering business questions with SQL, Python and BI dashboards.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#projects">View projects</a>
-          <a class="btn btn-ghost" href="#contact">Contact</a>
+          <a class="btn btn-primary magnetic" href="#projects">View projects</a>
+          <a class="btn btn-ghost magnetic" href="#contact">Contact</a>
         </div>
       </div>
       <div class="hero-photo">
-        <img src="assets/vijay-profile.webp" width="900" height="900" alt="Portrait of Vijay Kumar" fetchpriority="high">
+        <div class="plate">
+          <img src="assets/vijay-profile.webp" width="900" height="900" alt="Portrait of Vijay Kumar" fetchpriority="high">
+        </div>
       </div>
     </section>
 
-    <section class="logos container" aria-label="Companies I have worked with">
-      <p class="logos-label">Worked with</p>
-      <ul class="logo-row">
-        <li><img src="assets/logos/geberit.svg" alt="Geberit" height="28"></li>
-        <li><img src="assets/logos/huezo.svg" alt="Huezo" height="28"></li>
-        <li><img src="assets/logos/saint-gobain.png" alt="Saint-Gobain" height="28"></li>
-        <li><img src="assets/logos/featherlite.png" alt="Featherlite" height="28"></li>
-        <li><img src="assets/logos/razorfish.svg" alt="Razorfish" height="28"></li>
-        <li><img src="assets/logos/genpact.png" alt="Genpact" height="28"></li>
-      </ul>
+    <section class="marquee" aria-label="Companies I have worked with">
+      <div class="marquee-track">
+        <ul class="marquee-set">
+          <li><img src="assets/logos/geberit.svg" alt="Geberit" height="28"></li>
+          <li><img src="assets/logos/huezo.svg" alt="Huezo" height="28"></li>
+          <li><img src="assets/logos/saint-gobain.png" alt="Saint-Gobain" height="28"></li>
+          <li><img src="assets/logos/featherlite.png" alt="Featherlite" height="28"></li>
+          <li><img src="assets/logos/razorfish.svg" alt="Razorfish" height="28"></li>
+          <li><img src="assets/logos/genpact.png" alt="Genpact" height="28"></li>
+        </ul>
+        <ul class="marquee-set" aria-hidden="true">
+          <li><img src="assets/logos/geberit.svg" alt="" height="28"></li>
+          <li><img src="assets/logos/huezo.svg" alt="" height="28"></li>
+          <li><img src="assets/logos/saint-gobain.png" alt="" height="28"></li>
+          <li><img src="assets/logos/featherlite.png" alt="" height="28"></li>
+          <li><img src="assets/logos/razorfish.svg" alt="" height="28"></li>
+          <li><img src="assets/logos/genpact.png" alt="" height="28"></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="stats container" aria-label="At a glance">
+      <div class="tile tile-a reveal" style="--i:0">
+        <i class="ic ic-briefcase" aria-hidden="true"></i>
+        <div>
+          <p class="num"><span data-count="11">11</span>+</p>
+          <p class="cap">years in sales, CRM and operations before moving into analytics</p>
+        </div>
+      </div>
+      <div class="tile tile-b reveal" style="--i:1">
+        <p class="num"><span data-count="99">99</span>K+</p>
+        <p class="cap">orders analysed in the Target Brazil project</p>
+      </div>
+      <div class="tile tile-c reveal" style="--i:2">
+        <p class="num"><span data-count="50">50</span></p>
+        <p class="cap">stores covered in the Maven Toys analysis</p>
+      </div>
+      <div class="tile tile-d reveal" style="--i:3">
+        <div>
+          <p class="num"><span data-count="6">6</span> projects</p>
+          <p class="cap">with case studies, three of them as live dashboards</p>
+        </div>
+      </div>
     </section>
 
     <section class="section container" id="projects">
-      <h2>Projects</h2>
+      <div class="sec-head">
+        <h2>Projects</h2>
+        <p class="sub">Six analyses, each starting from a business question and ending in a decision.</p>
+      </div>
 
       <article class="feature reveal">
         <figure class="shot" data-shot="target">
@@ -79,7 +124,7 @@
       </article>
 
       <div class="pair">
-        <article class="card reveal">
+        <article class="card spot reveal">
           <figure class="shot" data-shot="maven">
             <img src="assets/shots/maven.webp" width="1600" height="1197" alt="Maven Toys dashboard: $14.44M revenue, 1.1M units, 27.79% gross margin" loading="lazy">
             <figcaption class="shot-missing">Screenshot needed: v2/assets/shots/maven.webp</figcaption>
@@ -93,7 +138,7 @@
           </div>
         </article>
 
-        <article class="card reveal">
+        <article class="card spot reveal" style="--i:1">
           <figure class="shot" data-shot="zomato">
             <img src="assets/shots/zomato.webp" width="650" height="325" alt="Chart comparing cost and price-range correlation worldwide and in India" loading="lazy">
             <figcaption class="shot-missing">Chart missing</figcaption>
@@ -108,19 +153,19 @@
         </article>
       </div>
 
-      <div class="more reveal">
+      <div class="more">
         <h3 class="more-title">More projects</h3>
-        <a class="more-row" href="../wine.html">
+        <a class="more-row reveal" href="../wine.html">
           <span class="more-name">Australian Wine Company</span>
           <span class="more-note">Tableau dashboard: $9.24M revenue against a $9.75M target.</span>
           <i class="ic ic-right" aria-hidden="true"></i>
         </a>
-        <a class="more-row" href="../yulu.html">
+        <a class="more-row reveal" style="--i:1" href="../yulu.html">
           <span class="more-name">Yulu bike rental demand</span>
           <span class="more-note">Hypothesis tests: season and weather changed demand significantly.</span>
           <i class="ic ic-right" aria-hidden="true"></i>
         </a>
-        <a class="more-row" href="../delhivery.html">
+        <a class="more-row reveal" style="--i:2" href="../delhivery.html">
           <span class="more-name">Delhivery logistics</span>
           <span class="more-note">Actual trips took about 1.95 times the OSRM estimate.</span>
           <i class="ic ic-right" aria-hidden="true"></i>
@@ -130,7 +175,10 @@
 
     <section class="section band" id="dashboards">
       <div class="container">
-        <h2>Dashboards</h2>
+        <div class="sec-head">
+          <h2>Dashboards</h2>
+          <p class="sub">Open the live versions to filter and explore the data yourself.</p>
+        </div>
         <div class="tabs" role="tablist" aria-label="Choose a dashboard">
           <button class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="true" type="button">Target Brazil</button>
           <button class="tab" role="tab" id="tab-maven" aria-controls="panel-maven" aria-selected="false" tabindex="-1" type="button">Maven Toys</button>
@@ -173,30 +221,30 @@
     </section>
 
     <section class="section container" id="writing">
-      <h2>Writing</h2>
-      <ul class="posts">
-        <li class="reveal">
-          <a class="post" href="https://www.linkedin.com/posts/vijaybsbs_dataanalytics-sql-bigquery-activity-7506527121729576960-_bFd" target="_blank" rel="noopener">
-            <span class="post-title">Advanced SQL for business insight</span>
-            <span class="post-note">Ranking, window functions and Pareto analysis to find which stores and products matter most. Maven Toys, part 6.</span>
-            <i class="ic ic-up-right" aria-hidden="true"></i>
-          </a>
-        </li>
-        <li class="reveal">
-          <a class="post" href="https://www.linkedin.com/posts/vijaybsbs_dataanalytics-sql-bigquery-activity-7506160573588361218-6W4i" target="_blank" rel="noopener">
-            <span class="post-title">What do the trends say about the business?</span>
-            <span class="post-note">Monthly revenue, month-over-month growth and seasonality in BigQuery. Maven Toys, part 5.</span>
-            <i class="ic ic-up-right" aria-hidden="true"></i>
-          </a>
-        </li>
-        <li class="reveal">
-          <a class="post" href="https://www.linkedin.com/feed/update/urn:li:activity:7510499380840386560/" target="_blank" rel="noopener">
-            <span class="post-title">Can I actually trust this data?</span>
-            <span class="post-note">Checking that data is comparable and reliable before writing a single query.</span>
-            <i class="ic ic-up-right" aria-hidden="true"></i>
-          </a>
-        </li>
-      </ul>
+      <div class="sec-head">
+        <h2>Writing</h2>
+        <p class="sub">Notes on SQL, data quality and how I approach an analysis.</p>
+      </div>
+      <div class="posts">
+        <a class="post post-lead spot reveal" href="https://www.linkedin.com/posts/vijaybsbs_dataanalytics-sql-bigquery-activity-7506527121729576960-_bFd" target="_blank" rel="noopener">
+          <i class="ic ic-up-right" aria-hidden="true"></i>
+          <span class="post-meta">Maven Toys, part 6</span>
+          <span class="post-title">Advanced SQL for business insight</span>
+          <span class="post-note">Ranking, window functions and Pareto analysis to find which stores and products matter most.</span>
+        </a>
+        <a class="post spot reveal" style="--i:1" href="https://www.linkedin.com/posts/vijaybsbs_dataanalytics-sql-bigquery-activity-7506160573588361218-6W4i" target="_blank" rel="noopener">
+          <i class="ic ic-up-right" aria-hidden="true"></i>
+          <span class="post-meta">Maven Toys, part 5</span>
+          <span class="post-title">What do the trends say about the business?</span>
+          <span class="post-note">Monthly revenue, month-over-month growth and seasonality in BigQuery.</span>
+        </a>
+        <a class="post spot reveal" style="--i:2" href="https://www.linkedin.com/feed/update/urn:li:activity:7510499380840386560/" target="_blank" rel="noopener">
+          <i class="ic ic-up-right" aria-hidden="true"></i>
+          <span class="post-meta">Data quality</span>
+          <span class="post-title">Can I actually trust this data?</span>
+          <span class="post-note">Checking that data is comparable and reliable before writing a single query.</span>
+        </a>
+      </div>
     </section>
 
     <section class="section container about" id="about">
@@ -207,26 +255,41 @@
         <p>I spent 11+ years in business development, sales, CRM and running my own textile company before moving into analytics. That background means I ask which decision a number is meant to support before I open a query.</p>
         <p>Then I check the data, run the analysis and explain the result in plain terms.</p>
 
-        <dl class="skills">
-          <div><dt>Query</dt><dd>SQL<br>BigQuery (GoogleSQL)<br>SQLite</dd></div>
-          <div><dt>Analyse</dt><dd>Python and Pandas<br>Statistics<br>Exploratory analysis</dd></div>
-          <div><dt>Present</dt><dd>Looker Studio<br>Tableau<br>Sales and CRM dashboards</dd></div>
-        </dl>
+        <div class="skills">
+          <div class="skill reveal">
+            <i class="ic ic-database" aria-hidden="true"></i>
+            <h3>Query</h3>
+            <p>SQL, BigQuery (GoogleSQL) and SQLite</p>
+          </div>
+          <div class="skill reveal" style="--i:1">
+            <i class="ic ic-chart-line-up" aria-hidden="true"></i>
+            <h3>Analyse</h3>
+            <p>Python, Pandas, statistics and exploratory analysis</p>
+          </div>
+          <div class="skill reveal" style="--i:2">
+            <i class="ic ic-presentation-chart" aria-hidden="true"></i>
+            <h3>Present</h3>
+            <p>Looker Studio, Tableau, sales and CRM dashboards</p>
+          </div>
+        </div>
 
-        <h3 class="sub">Education</h3>
+        <h3 class="sub-title">Education</h3>
         <ul class="edu">
-          <li><strong>MS in Data Science</strong> Woolf University x Scaler, in progress</li>
-          <li><strong>Advanced Business Analytics with AI</strong> Saïd Business School, University of Oxford, August 2026</li>
-          <li><strong>MBA</strong> University of Mysore, 2015</li>
-          <li><strong>B.E. Mechatronics</strong> 2012</li>
+          <li class="reveal"><i class="ic ic-graduation-cap" aria-hidden="true"></i><div><strong>MS in Data Science</strong><span>Woolf University x Scaler, in progress</span></div></li>
+          <li class="reveal" style="--i:1"><i class="ic ic-graduation-cap" aria-hidden="true"></i><div><strong>Advanced Business Analytics with AI</strong><span>Saïd Business School, University of Oxford, August 2026</span></div></li>
+          <li class="reveal" style="--i:2"><i class="ic ic-graduation-cap" aria-hidden="true"></i><div><strong>MBA</strong><span>University of Mysore, 2015</span></div></li>
+          <li class="reveal" style="--i:3"><i class="ic ic-graduation-cap" aria-hidden="true"></i><div><strong>B.E. Mechatronics</strong><span>2012</span></div></li>
         </ul>
       </div>
     </section>
 
     <section class="section container" id="experience">
-      <h2>Experience</h2>
+      <div class="sec-head">
+        <h2>Experience</h2>
+        <p class="sub">From sales and operations to running a company, and now analytics.</p>
+      </div>
       <ol class="timeline">
-        <li class="reveal"><span class="period">Jul 2025 - Present</span><div><h3>Geberit India</h3><p class="role">Assistant Manager, Business Development. Bangalore</p><p>Lead generation, CRM, and dashboards for sales and lead performance.</p></div></li>
+        <li class="reveal current"><span class="period">Jul 2025 - Present</span><div><h3>Geberit India</h3><p class="role">Assistant Manager, Business Development. Bangalore</p><p>Lead generation, CRM, and dashboards for sales and lead performance.</p></div></li>
         <li class="reveal"><span class="period">Aug 2022 - Jun 2025</span><div><h3>Huezo</h3><p class="role">Founder. Erode</p><p>Direct-to-business textile manufacturing, a digital sourcing platform, and production tracking.</p></div></li>
         <li class="reveal"><span class="period">Jan 2020 - Jun 2022</span><div><h3>Saint-Gobain India, Glass Business</h3><p class="role">Unit Manager. Bangalore</p><p>Sales leadership, pan-India reporting, CRM analytics and productivity dashboards.</p></div></li>
         <li class="reveal"><span class="period">Dec 2017 - Dec 2019</span><div><h3>Saint-Gobain India, Glass Business</h3><p class="role">Business Development Executive. Bengaluru</p><p>Market development, key accounts and demand generation.</p></div></li>
@@ -245,11 +308,11 @@
       </details>
     </section>
 
-    <section class="contact band" id="contact">
-      <div class="container contact-inner">
+    <section class="contact container" id="contact">
+      <div class="contact-card reveal">
         <h2>Have a business question worth exploring?</h2>
         <div class="contact-links">
-          <a class="btn btn-primary" href="mailto:vijaybsbs@gmail.com">vijaybsbs@gmail.com</a>
+          <a class="btn btn-invert magnetic" href="mailto:vijaybsbs@gmail.com">vijaybsbs@gmail.com</a>
           <a class="link" href="https://www.linkedin.com/in/vijaybsbs/" target="_blank" rel="noopener">LinkedIn <i class="ic ic-up-right" aria-hidden="true"></i></a>
           <a class="link" href="https://github.com/vijaybsbs" target="_blank" rel="noopener">GitHub <i class="ic ic-up-right" aria-hidden="true"></i></a>
         </div>
